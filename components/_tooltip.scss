@@ -1,0 +1,23 @@
+.tooltip {
+  &__box {
+    @include absolute($top: 54px, $right: 16px, $left: 16px);
+
+    z-index: z('level1');
+    padding: 16px 54px 16px 16px;
+    font-size: $font-size-s;
+    color: #666;
+    background-color: $white-color;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .05);
+  }
+  .btn--tooltip {
+    padding: 4px;
+    &::before {
+      @include size(16px);
+
+      content: '';
+      display: block;
+      background: url($path-img + 'ico_tooltip.svg') 0 0 / 100% no-repeat;
+    }
+  }
+}

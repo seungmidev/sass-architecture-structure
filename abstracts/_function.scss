@@ -1,0 +1,13 @@
+// rem
+@function rem($current, $container: null) {
+  @if $container {
+    @return $current / $container * 100%;
+  } @else {
+    @error '$container is not defained';
+  }
+}
+
+// z-index
+@function z($layer) {
+  @return map-get($z-layers, $layer);
+}

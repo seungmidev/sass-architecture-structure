@@ -1,0 +1,28 @@
+// font-face
+$price-font: 'Montserrat', sans-serif;
+
+// font-size
+$font-size-xs: 1.0rem;
+$font-size-s: 1.2rem;
+$font-size-m: 1.4rem;
+$font-size-l: 1.7rem;
+
+// color
+$base-color: #111;
+$white-color: #fff;
+$gray-color: #f6f6f6;
+$disabled-color: #b0b0b0;
+
+// width
+$container-width: 1280px;
+$min-width: 320px;
+
+// images path
+$path-img: '@/assets/images/';
+
+// z-index
+$z-layers: (
+  'level1': 10,
+  'level2': 20,
+  'level3': 30,
+);

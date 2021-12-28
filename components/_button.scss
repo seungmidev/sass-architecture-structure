@@ -1,0 +1,77 @@
+$btn-colors: (
+  // (color, border-color, background-color)
+  primary: ($base-color, $base-color, $white-color),
+  submit: ($white-color, currentColor, currentColor),
+  light: (#666, transparent, $white-color)
+);
+
+$btn-size: (
+  small: ($font-size-s),
+  medium: ($font-size-m),
+  large: ($font-size-l),
+  full: ($font-size-l),
+);
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  &:disabled {
+    opacity: .4;
+    pointer-events: none;
+  }
+
+  // color
+  @each $theme, $colors in $btn-colors {
+    &--#{$theme} {
+      color: nth($colors, 1);
+      border-color: nth($colors, 2);
+      background-color: nth($colors, 3);
+    }
+  }
+
+  // size
+  @each $theme, $size in $btn-size {
+    &--#{$theme} {
+      font-size: nth($size, 1);
+    }
+  }
+
+  &--close {
+    @include absolute($top: 50%, $right: 0);
+    @include size(50px);
+
+    transform: translateY(-50%);
+    &::before,
+    &::after {
+      @include absolute($top: 50%, $left: 50%);
+      @include size(12px,1px);
+
+      content:'';
+      background-color: #666;
+    }
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  &--delete {
+    @include absolute($top: 50%, $right: 0);
+
+    padding: 13px;
+    transform: translateY(-50%);
+    &::before {
+      @include size(16px);
+
+      content:'';
+      display: block;
+      background: url($path-img + 'ico_close.svg') 0 0 / 100% no-repeat;
+    }
+  }
+}
