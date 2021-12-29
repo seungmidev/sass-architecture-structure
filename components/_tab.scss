@@ -1,7 +1,7 @@
 .tab {
   position: sticky;
   top: 0;
-  z-index: z('level1');
+  z-index: level('1');
   background-color: $white-color;
 }
 .tab-list {

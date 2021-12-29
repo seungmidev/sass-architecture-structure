@@ -8,6 +8,6 @@
 }
 
 // z-index
-@function z($layer) {
+@function level($layer) {
   @return map-get($z-layers, $layer);
 }

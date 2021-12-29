@@ -2,7 +2,7 @@
   &__box {
     @include absolute($top: 54px, $right: 16px, $left: 16px);
 
-    z-index: z('level1');
+    z-index: level('1');
     padding: 16px 54px 16px 16px;
     font-size: $font-size-s;
     color: #666;
